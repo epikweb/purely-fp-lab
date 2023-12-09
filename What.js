@@ -15,7 +15,7 @@ const pure = value => liftF('return', value)
 
 const showEntered = value => putStrLn(`you entered %s`, [value])
 export const printNameAndAge = andThen(
-  question('what is your name?'),
+  question('what is your name? '),
   name =>
     liftOption(
       name,
@@ -24,7 +24,7 @@ export const printNameAndAge = andThen(
           showEntered(name),
           _ =>
             andThen(
-              question('what is your age?'),
+              question('what is your age? '),
               age =>
                 liftOption(
                   age,
